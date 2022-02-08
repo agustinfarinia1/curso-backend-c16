@@ -23,19 +23,4 @@ public class ProyectoFinalController {
     public Productos findProduct(@PathVariable String id) {
         return service.findByid(id);
     }
-
-    @PutMapping("/prod/{id}")
-    public Productos updateProduct(@PathVariable String id,@RequestBody Productos producto) {
-        return service.update(id, producto);
-    }
-
-    @GetMapping("/prod")
-    public List<Productos> searchProduct() {
-        return service.searchAll();
-    }
-
-    @DeleteMapping("/prod/{id}")
-    public void deleteProduct(@PathVariable String id) {
-        service.delete(id);
-    }
 }
