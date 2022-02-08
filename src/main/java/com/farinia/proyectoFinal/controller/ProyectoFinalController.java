@@ -5,6 +5,7 @@ import com.farinia.proyectoFinal.service.ProductoServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class ProyectoFinalController {
     }
 
     @GetMapping("/prod/{id}")
-    public Productos findProduct(@PathVariable String id) {
+    public Productos findProduct(@PathVariable String id, HttpSession session) {
         return service.findByid(id);
     }
 
